@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PS5-kontrollreparation i Stockholm – Stickdrift (320 kr)</title>
+  <meta name="description" content="Jag lagar PS5-kontroller med stickdrift i Stockholmsområdet för 320 kr. Kontakta mig via e‑post för mer information." />
+  <meta property="og:title" content="PS5-kontrollreparation i Stockholm – 320 kr" />
+  <meta property="og:description" content="Snabb och prisvärd reparation av stickdrift på PS5-handkontroller. Mejla för mer info." />
+  <meta property="og:type" content="website" />
+  <style>
+    /* === Design tokens === */
+    :root {
+      --bg: #0b0f17;
+      --text: #e8edf2;
+      --muted: #a9b3bd;
+      --card: rgba(255,255,255,0.06);
+      --stroke: rgba(255,255,255,0.10);
+      --accent: #7cdd7b;   /* modern green */
+      --accent-2: #5db4ff; /* cyan/blue for gradient */
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --text: #0f172a;
+        --muted: #475569;
+        --card: #ffffffcc;
+        --stroke: rgba(15,23,42,0.08);
+        --shadow: 0 10px 40px rgba(2,6,23,0.10);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 85% -10%, rgba(93,180,255,0.18), transparent 60%),
+        radial-gradient(1000px 600px at -10% 110%, rgba(124,221,123,0.18), transparent 60%),
+        var(--bg);
+      min-height: 100%;
+    }
+
+    /* === Layout === */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 18px 80px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+    .logo {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: conic-gradient(from 180deg, var(--accent), var(--accent-2));
+      box-shadow: 0 6px 20px rgba(93,180,255,0.35);
+    }
+    .nav { display: flex; gap: 16px; }
+    .nav a { color: var(--muted); text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 10px; }
+    .nav a:hover { background: var(--card); }
+
+    /* === Hero === */
+    .hero {
+      margin-top: 28px;
+      display: grid; gap: 24px; align-items: center;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; margin: 0 0 8px; }
+    .highlight { background: linear-gradient(90deg, var(--accent), var(--accent-2));
+                 -webkit-background-clip: text; background-clip: text; color: transparent; }
+    p.lead { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); margin: 0; }
+
+    .price-row { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+    .price { font-size: clamp(24px, 3vw, 32px); font-weight: 800; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(124,221,123,0.15); border: 1px solid rgba(124,221,123,0.35); font-weight: 700; }
+
+    .actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    .btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; font-weight: 700; padding: 14px 18px; border-radius: 14px; transition: transform .12s ease, box-shadow .12s ease, filter .12s ease; display: inline-flex; align-items: center; gap: 10px; }
+    .btn.primary { background: linear-gradient(180deg, var(--accent), #19a14b); color: #0b0f17; box-shadow: 0 12px 28px rgba(124,221,123,0.35); }
+    .btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--stroke); }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+
+    .hero-visual { position: relative; min-height: 280px; }
+    .glow {
+      position: absolute; inset: -20px; border-radius: 28px;
+      background: radial-gradient(400px 220px at 30% 30%, rgba(93,180,255,0.25), transparent 60%),
+                  radial-gradient(400px 220px at 70% 70%, rgba(124,221,123,0.25), transparent 60%);
+      filter: blur(18px);
+    }
+    .controller {
+      position: relative; z-index: 1; margin: 18px auto 0; max-width: 520px; aspect-ratio: 16/9;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 6px);
+      box-shadow: var(--shadow);
+      display: grid; place-items: center;
+      color: var(--muted);
+      font-weight: 700;
+      text-align: center;
+      padding: 16px;
+    }
+
+    /* === Features === */
+    .features { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 920px) { .features { grid-template-columns: 1fr; } }
+    .feature { padding: 18px; border-radius: var(--radius); border: 1px solid var(--stroke); background: var(--card); }
+    .feature h3 { margin: 0 0 6px; font-size: 18px; }
+    .feature p { margin: 0; color: var(--muted); }
+    .icon { width: 20px; height: 20px; display: inline-block; margin-right: 8px; vertical-align: -4px; }
+
+    /* === FAQ === */
+    .faq { margin-top: 28px; }
+    details { background: var(--card); border: 1px solid var(--stroke); padding: 14px 16px; border-radius: var(--radius); }
+    details + details { margin-top: 12px; }
+    summary { cursor: pointer; font-weight: 700; }
+    summary::marker { color: var(--accent); }
+
+    footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="logo" aria-hidden="true"></span> PS5 Driftfix</div>
+      <nav class="nav" aria-label="Primär navigation">
+        <a href="#pris">Pris</a>
+        <a href="#kontakta">Kontakt</a>
+        <a href="#faq">Frågor</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="card">
+        <h1 id="hero-title">Lagar <span class="highlight">PS5‑kontroller</span> med stickdrift</h1>
+        <p class="lead">Problem med att siktet glider av sig själv? Jag reparerar DualSense‑stickdrift i <strong>Stockholmsområdet</strong> – snabbt och prisvärt.</p>
+
+        <div class="price-row" id="pris">
+          <div class="price">320&nbsp;kr</div>
+          <span class="chip" aria-label="Fast pris">Fast pris</span>
+        </div>
+
+        <!-- Byt e‑posten nedan till din egen -->
+        <div class="actions" id="kontakta">
+          <a class="btn primary" href="mailto:dinmail@exempel.se?subject=Reparation%20PS5-kontroll%20%28stickdrift%29&body=Hej!%20Jag%20vill%20laga%20min%20PS5-kontroll.%20Beskrivning:%20 ">
+            📩 Mejla mig
+          </a>
+          <a class="btn secondary" href="#faq">Läs vanliga frågor</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="controller" role="img" aria-label="Stiliserad handkontroll-visual">
+          🎮 DualSense – Stickdrift? Jag fixar det.
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Fördelar">
+      <div class="feature">
+        <h3><span class="icon">⚡</span>Snabb återkoppling</h3>
+        <p>Vanligtvis svar samma dag och smidig inlämning i Stockholm.</p>
+      </div>
+      <div class="feature">
+        <h3><span class="icon">🛠️</span>Proffsig åtgärd</h3>
+        <p>Rengöring/byte av potentiometrar och noggrann kalibrering.</p>
+      </div>
+      <div class="feature">
+        <h3><span class="icon">💸</span>Prisvärt</h3>
+        <p>Fast pris <strong>320 kr</strong> – du slipper köpa ny handkontroll.</p>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" style="margin:16px 0;">Vanliga frågor</h2>
+      <details>
+        <summary>Hur går reparationen till?</summary>
+        <p>Jag felsöker, rengör/byter slitna delar och kalibrerar sticksen. Därefter testas alla knappar och triggerzoner.</p>
+      </details>
+      <details>
+        <summary>Hur lång tid tar det?</summary>
+        <p>Ofta klart inom 1–2 dagar beroende på inflöde. Jag meddelar när din kontroll är redo.</p>
+      </details>
+      <details>
+        <summary>Var sker inlämning?</summary>
+        <p>Inlämning/upphämtning ordnas i Stockholmsområdet efter överenskommelse via mejl.</p>
+      </details>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> PS5 Driftfix – Reparation av stickdrift i Stockholm. Pris per handkontroll.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Uppdatera årtal
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
