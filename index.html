@@ -62,9 +62,9 @@
     .hero {
       margin-top: 28px;
       display: grid; gap: 24px; align-items: center;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr 1fr;
     }
-    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+    @media (max-width: 60px) { .hero { grid-template-columns: 1fr; } }
 
     .card {
       background: var(--card);
@@ -113,7 +113,7 @@
     }
 
     /* === Features === */
-    .features { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+    .features { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 920px) { .features { grid-template-columns: 1fr; } }
     .feature { padding: 18px; border-radius: var(--radius); border: 1px solid var(--stroke); background: var(--card); }
     .feature h3 { margin: 0 0 6px; font-size: 18px; }
@@ -133,26 +133,43 @@
 <body>
   <div class="wrap">
     <header class="wrap">
-      <div class="brand"><span class="logo" aria-hidden="true"></span> PS5 Driftfix</div>
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        Jag felsöker, reparerar och köper PS5-kontroller – snabbt och pålitligt
+      </div>
     </header>
   
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <div class="card">
-          <h1 id="hero-title">Lagar <span class="highlight">PS5-kontroller</span> med stickdrift</h1>
-          <p class="lead">Problem med att siktet glider av sig själv? Jag reparerar DualSense-stickdrift i <strong>Stockholmsområdet</strong> – snabbt och prisvärt.</p>
+          <h1 id="hero-title">Lagar <span class="highlight">PS5-kontroller</span></h1>
+          <p class="lead">Problem med att siktet glider av sig själv? Jag reparerar PS5 kontroller i <strong>Stockholmsområdet</strong> – snabbt och prisvärt.</p>
   
           <div class="price-row" id="pris">
-            <div class="price">320&nbsp;kr</div>
-            <span class="chip" aria-label="Fast pris">Fast pris</span>
+            <div class="price">Från 150&nbsp;kr</div>
           </div>
   
           <div class="actions" id="kontakta">
             <a class="btn primary" href="mailto:mpresakald@gmail.com?subject=Reparation%20PS5-kontroll%20%28stickdrift%29&body=Hej!%20Jag%20vill%20laga%20min%20PS5-kontroll.%20Beskrivning:%20 ">
               📩 Mejla mig
             </a>
-            <a class="btn secondary" href="#faq">Läs vanliga frågor</a>
           </div>
+        </div>
+      </div>
+      <div class="hero-inner">
+        <div class="card">
+          <h1 id="hero-title">Felsökning av <span class="highlight">PS5-kontroller</span></h1>
+          <p class="lead">
+            För att kunna fastställa ett pris för lagning av din PS5-kontroll behöver jag ta in och felsöka den.
+          </p>
+          <p>
+            🔹 <strong>Byte av stick-modul:</strong> 320 kr<br>
+            🔹 <strong>Lagning utan byte av hel modul:</strong> 150 kr<br>
+            🔹 <strong>Köper trasiga PS5-kontroller:</strong> 250 kr/st
+          </p>
+          <p>
+            Kontakta mig gärna för att boka felsökning eller om du vill sälja en trasig kontroll.
+          </p>
         </div>
       </div>
     </section>
@@ -167,10 +184,6 @@
       <div class="feature">
         <h3><span class="icon">🛠️</span>Proffsig åtgärd</h3>
         <p>Rengöring/byte av potentiometrar och noggrann kalibrering.</p>
-      </div>
-      <div class="feature">
-        <h3><span class="icon">💸</span>Prisvärt</h3>
-        <p>Fast pris <strong>320 kr</strong> – du slipper köpa ny handkontroll.</p>
       </div>
     </section>
 
